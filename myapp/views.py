@@ -13,6 +13,8 @@ def crud(request):
     return render(request, "crud.html", pacote)
 
 def createP(request):
+    if request.user.is_authenticated == False:
+        return redirect("login")
     form = ProfessorForm(request.POST or None)
     pacote = {"form": form}
     if request.method == "POST":
@@ -22,6 +24,8 @@ def createP(request):
     return render(request, "formProf.html", pacote)
 
 def updateP(request, id):
+    if request.user.is_authenticated == False:
+        return redirect("login")
     update = True
     prof = Professor.objects.get(pk=id)
     form = ProfessorForm(request.POST or None, instance = prof)
@@ -33,6 +37,8 @@ def updateP(request, id):
     return render(request, "formProf.html", pacote)
 
 def delP(request, id):
+    if request.user.is_authenticated == False:
+        return redirect("login")
     prof = Professor.objects.get(pk=id)
     prof.delete()
     return redirect("/crud")
