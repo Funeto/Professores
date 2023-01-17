@@ -1,0 +1,33 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} ProfTop | Consulta {% endblock %}
+{% block conteudo %}
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-magnify"></i>
+        </span> Consulta
+      </h3>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'url_index' %}">ProfTop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Consulta</li>
+      </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-md-8 grid-margin stretch-card text-center">
+        <div class="card">
+        <div class="card-body text-center">
+            <h4 class="card-title mb-4">Fazer consulta</h4>
+            <form class="forms-sample" method="get" action="{% url 'url_listagem' %}">
+            <div class="form-group">
+                <input type="text" class="form-control" id="exampleInputUsername1" placeholder="Digite o nome de um professor..." name="search">
+            </div>
+            <button type="submit" class="btn btn-gradient-primary">Pesquisar</button>
+            </form>
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

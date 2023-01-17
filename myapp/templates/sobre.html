@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} ProfTop | Sobre {% endblock %}
+{% block conteudo %}
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-information"></i>
+        </span> Sobre
+      </h3>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'url_index' %}">ProfTop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Sobre</li>
+      </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title">informações</h4>
+          <div class="d-flex mt-3 align-items-top">
+              <div class="mb-0 flex-grow">
+              <h5 class="me-2 mb-2">Componentes:</h5>
+              <p class="mb-0 font-weight-light mb-2">Francisco Carneiro de Araújo Neto</p>
+              <h5 class="me-2 mb-2">Github deste projeto:</h5>
+              <p class="mb-0 font-weight-light"><a href="https://github.com/Funeto/Professores">https://github.com/Funeto/Professores</a></p>
+            </div>
+            <div class="ms-auto">
+              <i class="mdi mdi-heart-outline text-muted"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}

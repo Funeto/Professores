@@ -1,0 +1,60 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %} ProfTop | CRUD {% endblock %}
+{% block conteudo %}
+<div class="page-header">
+    <h3 class="page-title">
+        <span class="page-title-icon bg-gradient-primary text-white me-2">
+          <i class="mdi mdi-table-large"></i>
+        </span> CRUD
+      </h3>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{% url 'url_index' %}">ProfTop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">CRUD</li>
+      </ol>
+    </nav>
+</div>
+<div class="row">
+    <div class="col-lg-12 grid-margin stretch-card">
+      <div class="card">
+        <div class="card-body">
+          <h4 class="card-title mb-5">Professores
+            <a href="{% url 'url_createP' %}">
+              <button type="button" class="float-end btn btn-gradient-success">+&nbsp; Novo Professor</button>
+            </a>
+          </h4>
+          <table class="table">
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Disciplina</th>
+                <th>Área do conhecimento</th>
+                <th>Formação Acadêmica</th>
+                <th class="col-lg-1">Ações</th>
+              </tr>
+            </thead>
+            <tbody>
+                {%if professores %}
+                {% for i in professores %}
+                <tr>
+                    <td>{{i.pk}}</td>
+                    <td>{{i.nome}}</td>
+                    <td>{{i.disciplina}}</td>
+                    <td>{{i.area}}</td>
+                    <td>{{i.formacao}}</td>
+                    <td>
+                        <a href="{% url 'url_updateP' i.pk %}"><button type="button" class="btn btn-gradient-primary btn-rounded btn-icon"><i class="mdi mdi-pencil"></i></button></a>
+                        <a href="{% url 'url_delP' i.pk %}"><button type="button" class="btn btn-gradient-danger btn-rounded btn-icon"><i class="mdi mdi-delete"></i></button></a>
+                    </td>
+                </tr>
+                {% endfor %}
+                {% endif %}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+</div>
+{% endblock %}
