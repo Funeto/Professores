@@ -1,0 +1,4 @@
+Módulo Crispy:
+para instalá-lo deve-se rodar o comando
+pip install django-crispy-forms
+com o ambiente virtual ativado
